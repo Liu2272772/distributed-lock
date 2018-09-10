@@ -45,7 +45,7 @@ public class DistributedLockAop implements ApplicationContextAware{
 		LockService lockService=selectLogicLockService(lockAnnotation);
 	    try {
 	    	//调用服务
-			return lockService.doService(pjp);
+			return lockService.doService(pjp,lockAnnotation);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
